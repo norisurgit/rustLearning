@@ -1,7 +1,12 @@
-mod leet_roman_to_int;
+mod new_benchmark_fn;
+mod sort_bubble;
 fn main() {
-    let string_for_number = String::from("CD");
-    let number_converted = leet_roman_to_int::return_splitted(&string_for_number);
-
-    println!("result: {}", number_converted);
+    new_benchmark_fn::benchmark_it(|| {
+        sort_bubble::bubble_sort(
+            [
+                25, 328, -85215, -3652, 585, -151, 8521, 0, 126548, -0, 14215, -25, 0, 5, 2205, 8,
+            ]
+            .to_vec(),
+        )
+    });
 }
